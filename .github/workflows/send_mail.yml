@@ -1,14 +1,14 @@
 name: keylol action
 on:
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "* * * * *"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: keylol
-        uses: yuyinws/keylol-action@master
+      - name: Keylol Action
+        uses: yuyinws/keylol-action@v1.0
         with:
           urls: 
             f335-1

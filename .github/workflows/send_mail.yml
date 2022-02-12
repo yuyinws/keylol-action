@@ -1,19 +1,18 @@
 name: keylol action
 on:
   schedule:
-    - cron: "0 1 * * *"
+    - cron: "0 4 * * *"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Keylol Action
-        uses: yuyinws/keylol-action@v1.0
+        uses: yuyinws/keylol-action@v1.1
         with:
           urls: 
-            f335-1
-            forum.php?mod=forumdisplay&fid=248&orderby=lastpost&filter=dateline&dateline=604800
-            f271-1
+            forum.php?mod=forumdisplay&fid=319&filter=author&orderby=dateline&dateline=86400
+            forum.php?mod=forumdisplay&fid=251&filter=author&orderby=dateline
           limit: 10
 
       - name: Send mail

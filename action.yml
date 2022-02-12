@@ -1,0 +1,18 @@
+name: Keylol Action
+description: GitHub Action for Keylol
+author: "yuyinws"
+branding:
+  icon: arrow-right-circle
+  color: gray-dark
+inputs:
+  urls:
+   description: "需要订阅的url"
+   required: false
+   default: forum.php?mod=guide&view=index
+  limit:
+    description: "展示的帖子限制数"
+    required: false
+    default: '10'
+runs:
+  using: node16
+  main: dist/index.js

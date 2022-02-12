@@ -1,0 +1,32 @@
+name: keylol action
+on:
+  schedule:
+    - cron: "0 1 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: keylol
+        uses: yuyinws/keylol-action@master
+        with:
+          urls: 
+            f335-1
+            forum.php?mod=forumdisplay&fid=248&orderby=lastpost&filter=dateline&dateline=604800
+            f271-1
+          limit: 10
+
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3.6.0
+        with:
+          # smtp 服务器地址
+          server_address: smtp.qq.com
+          # smtp 服务器端口
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Keylol帖子订阅邮件
+          html_body: file://context.html
+          to: 657508366@qq.com
+          from: yuyinws
+          convert_markdown: true

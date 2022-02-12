@@ -1,0 +1,27 @@
+{
+  "name": "keylol-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build index.js --out dist --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuyinws/keylol-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuyinws/keylol-action/issues"
+  },
+  "homepage": "https://github.com/yuyinws/keylol-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@vercel/ncc": "^0.33.1",
+    "axios": "^0.25.0",
+    "cheerio": "^1.0.0-rc.10",
+    "html-minifier": "^4.0.0"
+  }
+}

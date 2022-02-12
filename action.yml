@@ -3,7 +3,7 @@ description: GitHub Action for Keylol
 author: "yuyinws"
 branding:
   icon: arrow-right-circle
-  color: gray-dark
+  color: blue
 inputs:
   urls:
    description: "需要订阅的url"

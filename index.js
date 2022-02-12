@@ -8,11 +8,10 @@ const DOMAIN = 'https://keylol.com/'
 const main = async () => {
   try {
     const URLS = core.getInput('urls', { required: false })
-    let limit = core.getInput('limit', { required: false })
-    limit = parseInt(limit)
-    console.log(limit)
     // const URLS =
     //   'forum.php?mod=guide&view=index forum.php?mod=forumdisplay&fid=161&filter=typeid&typeid=459 f271-1'
+    let limit = core.getInput('limit', { required: false })
+    limit = parseInt(limit)
     const urlArray = URLS.split(' ')
     let context = ''
     for (const url of urlArray) {
@@ -42,7 +41,7 @@ const main = async () => {
             .each((j, ele) => {
               // 过滤置顶帖子
               if ($(ele).attr('id').indexOf('normalthread') > -1) {
-                if ( limit > 0 && index > limit) {
+                if (limit > 0 && index > limit) {
                   return false
                 }
                 // 帖子名称
@@ -55,10 +54,10 @@ const main = async () => {
                 const tPost = $(ele).find('.num a').text()
 
                 const tHTML = `<tr style="margin-top:10px">
-                    <td style="width:1000px;position: relative">
+                    <td style="width:1500px;position: relative">
                       <a style="text-decoration: none;color:#57bbea" href="${DOMAIN}${tLink}">
                       ${tName}
-                      <span style="color:gray;position:absolute;right:50px"> ${tPost} </span>
+                      <span style="color:gray;position:absolute;right:100px"> ${tPost} </span>
                       <span style="color:gray;position:absolute;right:0"> ${tView} </span>
                       </a>
                     </td>

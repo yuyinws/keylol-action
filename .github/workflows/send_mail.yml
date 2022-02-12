@@ -27,6 +27,6 @@ jobs:
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Keylol帖子订阅邮件
           html_body: file://context.html
-          to: 657508366@qq.com
+          to: ${{ secrets.TARGET_MAIL }}
           from: yuyinws
           convert_markdown: true

@@ -64,7 +64,7 @@ jobs:
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Keylol帖子订阅邮件
           html_body: file://context.html
-          to: 657508366@qq.com
+          to: ${{ secrets.TARGET_MAIL }}
           from: yuyinws
           convert_markdown: true
 ```
@@ -122,7 +122,7 @@ limit为0代表不限制，会发送第一页所有的帖子。
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Keylol帖子订阅邮件
           html_body: file://context.html
-          to: 657508366@qq.com
+          to: ${{ secrets.TARGET_MAIL }}
           from: yuyinws
           convert_markdown: true
 ```
@@ -136,6 +136,7 @@ limit为0代表不限制，会发送第一页所有的帖子。
 `html_body`请勿改动。
 
 `to`是接收邮件的邮箱地址，可以配置多个邮箱来接收邮件，多个邮箱之间用逗号分隔。
+可以明文输入，也可以保存到仓库的secrets中，然后通过`${{ secrets.TARGET_MAIL }}`获取。
 
 `from`是发送邮箱方的昵称。
 

@@ -24,11 +24,11 @@
 
 你可以在任意一个已有的仓库中运行action，也可以直接Fork [keylol-action](https://github.com/yuyinws/keylol-action)这个仓库，此仓库中的`.gitub/workflows/send_mail.yml`已经是一个配置好的action，只需在其中改动即可。
 
-选择好仓库后，在仓库主界面依次点击`Settings->Secrets->Actions`,再点击`New repository secret `新建两个名为`MAIL_USERNAME`和`MAIL_PASSWORD`密钥，2个密钥的值依次是需要发送邮件的邮箱的账号和密码。
+选择好仓库后，在仓库主界面依次点击`Settings->Secrets->Actions`,再点击`New repository secret `新建两个名为`MAIL_USERNAME`和`MAIL_PASSWORD`和`TARGET_MAIL`3个密钥，3个密钥的值依次是需要发送邮件的邮箱的账号和密码以及需要接收邮件的邮箱地址。
 
 > 请注意：选择发送邮件的邮箱必须开启SMTP功能，QQ邮箱的开启方法可以[点击这里查看](https://service.mail.qq.com/cgi-bin/help?subtype=1&no=166&id=28)。其他邮箱请自行查找开启方法。
 
-![image-20220212140002985](https://s2.loli.net/2022/02/12/PFahJv6DXM134tN.png)
+![image-20220212201452436](https://s2.loli.net/2022/02/12/Y8BRINW1fM26ncP.png)
 
 #### 配置Github Action
 
